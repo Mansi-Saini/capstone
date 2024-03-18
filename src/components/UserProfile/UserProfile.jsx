@@ -25,7 +25,7 @@ const UserProfile = () => {
     }
   };
 
-  
+
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
   };
@@ -48,7 +48,7 @@ const UserProfile = () => {
       alert("You cannot add more than 3 members.");
       return;
     }
-    if (!firstName || !email || !department || !lastName){
+    if (!firstName || !email || !department || !lastName) {
       alert("Fill the detail of member first");
       return;
     }
@@ -71,89 +71,77 @@ const UserProfile = () => {
 
   return (
     <>
-    <Navbar />
-    <Card className="rounded">
-      <Card.Body className="text-justify">
-        <Card.Title>Your Profile</Card.Title>
-        <Card.Text>
-        First name :
-        Last name:
-        Email:
-        Department:
-        etc 
+      <Navbar />
+      {/* <Card className="rounded">
+        <Card.Body className="text-justify">
+          <Card.Title>Your Profile</Card.Title>
+          <Card.Text>
+            First name :
+            Last name:
+            Email:
+            Department:
+            etc
 
-        </Card.Text>
-      </Card.Body>
-    </Card>
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        padding: "20px",
-      }}
-    >
-      <div
-        style={{
-          flex: 1,
-          backgroundColor: "#FF781699",
-          margin: "20px",
-          borderRadius: "20px",
-          paddingBottom:"2rem",
-          height: "auto",
-          color: "white",
-          fontFamily: "Inter",
-        }}
+          </Card.Text>
+        </Card.Body>
+      </Card> */}
+      <div className="containerU"
       >
-        <h2
-          style={{
-            textAlign: "center",
-            color: "#F66700",
-            fontFamily: "DM Serif Text",
-            marginBottom: "20px",
-            marginTop: "20px",
-          }}
+        <div className="form-div"
+        style={{
+          gridGap: "2vh"
+        }}
         >
-          Add Team Details
-        </h2>
-        <form
-          style={{
-            marginLeft: "40px",
-            marginRight: "40px",
-            fontFamily: "Inter",
-          }}
-        >
-          <div className="mb-3">
-            <label htmlFor="formGroupExampleInput" className="form-label">
-              Team Name
-            </label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              id="ideaTitle"
-              onChange={handleTeamNameChange}
-              value={teamName}
-              
-            />
-          </div>
-          <br />
-          <strong>
-            <h4
-              style={{
-                textAlign: "center",
-                color: "#F66700",
-                fontFamily: "Inter",
-                margin: "-16px",
-                fontSize: "20px",
-              }}
-            >
-              TEAM MEMBERS
-            </h4>
-          </strong>
-          <br />
-          <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ margin: "2px" }}>
+          <h2
+            style={{
+              textAlign: "center",
+              color: "#F66700",
+              fontFamily: "DM Serif Text",
+              // marginBottom: "20px",
+              // marginTop: "20px",
+            }}
+          >
+            Add Team Details
+          </h2>
+          <form
+            style={{
+              // marginLeft: "40px",
+              // marginRight: "40px",
+              fontFamily: "Inter",
+            }}
+          >
+            <div >
+              <label htmlFor="formGroupExampleInput" className="form-label">
+                Team Name
+              </label>
+              <input
+                type="text"
+                required
+                className="form-control"
+                id="ideaTitle"
+                onChange={handleTeamNameChange}
+                value={teamName}
+
+              />
+            </div>
+
+            <strong>
+              <h4
+                style={{
+                  textAlign: "center",
+                  color: "#F66700",
+                  fontFamily: "Inter",
+                  // margin: "-16px",
+                  fontSize: "20px",
+                }}
+              >
+                TEAM MEMBERS
+              </h4>
+            </strong>
+
+            <div className="box-profile">
+              {/* <div style={{ display: "flex", gap: "2vw" }}> */}
+              <div>
                 <label htmlFor="formGroupExampleInput" className="form-label">
                   First Name
                 </label>
@@ -166,7 +154,7 @@ const UserProfile = () => {
                   required
                 />
               </div>
-              <div style={{ margin: "2px" }}>
+              <div >
                 <label htmlFor="formGroupExampleInput" className="form-label">
                   Last Name
                 </label>
@@ -178,9 +166,9 @@ const UserProfile = () => {
                   onChange={handleLastNameChange}
                 />
               </div>
-            </div>
-            <div style={{ display: "flex" }}>
-              <div style={{ margin: "2px" }}>
+              {/* </div> */}
+              {/* <div style={{ display: "flex", gap: "2vw" }}> */}
+              <div >
                 <label htmlFor="formGroupExampleInput" className="form-label">
                   Email
                 </label>
@@ -194,7 +182,7 @@ const UserProfile = () => {
                   required
                 />
               </div>
-              <div style={{ margin: "2px" }}>
+              <div >
                 <label htmlFor="formGroupExampleInput" className="form-label">
                   Department
                 </label>
@@ -207,57 +195,59 @@ const UserProfile = () => {
                   required
                 />
               </div>
+              {/* </div> */}
+              <input
+                id="submitIdeabtn"
+                className="btn"
+                style={{
+                  display: "flex",
+                  justifyContent: "right",
+                  color: "#F66700",
+                  backgroundColor: "white",
+                  alignItems: "right",
+                  textAlign: "center",
+                  gridColumnStart: "2",
+                  gridColumnEnd: "3"
+                }}
+                value={editFlag.flag ? "Edit Members" : "Add Members"}
+                onClick={addMember}
+              />
             </div>
-          </div>
-          <br />
-          <input
-            id="submitIdeabtn"
-            className="btn"
-            style={{
-              display: "flex",
-              justifyContent: "right",
-              color: "white",
-              backgroundColor: "#F66700",
-              alignItems: "right",
-              textAlign: "center",
-            }}
-            value={editFlag.flag ? "Edit Members" : "Add Members"}
-            onClick={addMember}
-          />
-          <br />
-          <input
-            id="submitIdeabtn"
-            className="btn"
-            type="button"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              color: "white",
-              backgroundColor: "#F66700",
-              alignItems: "right",
-              width: "100%",
-              textAlign: "center",
-            }}
-            onClick={handleSubmit}
-            value="Submit"
-          />
-        </form>
-      </div>
-      {/* Right Side - Time Left and Status Sections */}
-      
-      <div
-        className="team-member-card"
-        style={{
-          flex: 1,
-          backgroundColor: "#FF781699",
-          margin: "20px",
-          borderRadius: "20px",
-          height: "auto",
-          color: "white",
-          fontFamily: "Inter",
-        }}
-      >
-         {members.length === 0 ? (
+
+
+            <input
+              id="submitIdeabtn"
+              className="btn"
+              type="button"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                color: "white",
+                backgroundColor: "#F66700",
+                alignItems: "right",
+                width: "100%",
+                textAlign: "center",
+              }}
+              onClick={handleSubmit}
+              value="Submit"
+            />
+          </form>
+        </div>
+        {/* Right Side - Time Left and Status Sections */}
+
+        <div
+          className="team-member-card"
+          style={{
+            flex: 1,
+            backgroundColor: "#FF781699",
+            margin: "20px",
+            borderRadius: "20px",
+            height: "auto",
+            color: "white",
+            fontFamily: "Inter",
+          }}
+        >
+          {members.length === 0 ? (
             <p style={{ textAlign: "center", marginTop: "20px" }}>
               Add the team members' details.
             </p>
@@ -316,8 +306,8 @@ const UserProfile = () => {
               return null;
             })
           )}
+        </div>
       </div>
-    </div>
     </>
   );
 };
