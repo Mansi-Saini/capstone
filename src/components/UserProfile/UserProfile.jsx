@@ -88,9 +88,9 @@ const UserProfile = () => {
       <div className="containerU"
       >
         <div className="form-div"
-        style={{
-          gridGap: "2vh"
-        }}
+          style={{
+            gridGap: "2vh"
+          }}
         >
           <h2
             style={{
@@ -240,37 +240,25 @@ const UserProfile = () => {
           style={{
             flex: 1,
             backgroundColor: "#FF781699",
-            margin: "20px",
+            // margin: "20px",
             borderRadius: "20px",
             height: "auto",
             color: "white",
             fontFamily: "Inter",
+            display: "grid",
           }}
         >
-          {members.length === 0 ? (
-            <p style={{ textAlign: "center", marginTop: "20px" }}>
-              Add the team members' details.
-            </p>
-          ) : (
-            members.map((member, index) => {
-              if (index < 4) {
-                return (
-                  <div
-                    className="card cod"
-                    style={{
-                      height: "auto",
-                      margin: "3.5vh",
-                      padding: "0.5rem",
-                      position: "relative",
-                      backgroundColor: "white",
-                      borderRadius: "1.5rem",
-                      boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
-                      width: "auto",
-                      display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "center",
-                    }}
-                  >
+          <div
+            className="cod"
+          >
+            {members.length === 0 ? (
+              <p style={{ textAlign: "center", marginTop: "20px" }}>
+                Team members' details.
+              </p>
+            ) : (
+              members.map((member, index) => {
+                if (index < 4) {
+                  return (
                     <div
                       className="card-body codil"
                       style={{
@@ -280,7 +268,7 @@ const UserProfile = () => {
                         flex: "75%",
                       }}
                     >
-                      <p style={{ fontSize: "0.8rem" }}>
+                      <p style={{ fontSize: "1rem" }}>
                         <strong>Team Member {index + 1}</strong>
                         <br />
                         <strong>Name: </strong>
@@ -291,21 +279,13 @@ const UserProfile = () => {
                       </p>
                     </div>
 
-                    <div
-                      className="codir"
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "flex-end",
-                        flex: "25%",
-                      }}
-                    ></div>
-                  </div>
-                );
-              }
-              return null;
-            })
-          )}
+                  
+                    );
+                  }
+            return null;
+                })
+                )}
+          </div>
         </div>
       </div>
     </>

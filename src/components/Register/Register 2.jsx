@@ -11,7 +11,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Style.css';
+import './StyleRegister.css';
 // import { CreateContext } from "../../App";
 import { useContext } from "react";
 
@@ -183,7 +183,7 @@ const Register = () => {
                     
                     navigate('/logintest')              
             ) : (
-                <div>
+                <div className="background">
  
                     <div className="error-container">
                         <p id="uidnote1" className={firstName && !validFName ? "instructions" : "offscreen"}>
@@ -222,16 +222,16 @@ const Register = () => {
                             Must match the first password input field.
                         </p>
                     </div>
-                <section>
+                <section className="register">
                     <div className="error">
                         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     </div>
                     <div className="heading">
                         <h1>Register</h1>
                     </div>
-                    <div className="form">
+                    <div className="formR">
  
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className="registerForm">
                             <div className="form-grp">
                                 <label htmlFor="firstName">
                                     First Name:
@@ -426,12 +426,12 @@ const Register = () => {
        
       </Dialog>
    
-                        <div className="sso"></div>
+                        
                         <div className="signIn">
                             Already registered?
                             <span className="line">
                                 {/* router link  */}
-                                <Link to='/logintest'>Sign In</Link>
+                                <Link to='/logintest' style={{color: "#F63B00"}}>Sign In</Link>
                             </span>
                         </div>
                     </div>

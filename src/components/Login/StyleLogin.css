@@ -12,9 +12,9 @@ html {
     /* color: #fff; */
 }
  
-body {
-    max-height: 100vh;
-    background-image: url("background.jpg");
+.background {
+    height: 100vh;
+    background-image: url("../../background.jpg");
     background-size: cover;
     overflow: hidden;
 }
@@ -27,12 +27,12 @@ body {
   min-height: 100vh;
   padding: 1rem 0.5rem;
 } */
- 
-section {
+
+.login {
     margin: auto;
     margin-top: 5vh;
     display: grid;
-    grid-template-rows: 0vh 6vh auto;
+    grid-template-rows: 0vh 8vh auto;
     /* align-items: center; */
     /* max-width: 35vw; */
     max-height: 90vh;
@@ -40,7 +40,7 @@ section {
     /* padding: 1rem; */
     justify-items: center;
     width: 40vw;
-    height: 90vh;
+    height: 80vh;
 }
  
 .heading {
@@ -57,19 +57,21 @@ section {
     /* padding-bottom: 1rem; */
     display: grid;
     /* grid-template-rows: 60vh 5vh 10vh; */
-    grid-template-rows: 50vh 2vh 25vh 6vh;
+    grid-template-rows: 40vh 0vh 2vh 10vh;
     width: 40vw;
     justify-items: center;
     align-items: center;
+    align-self: center;
+    height: max-content;
 }
  
-form {
+.loginForm {
     display: grid;
     grid-template-columns: auto auto;
     width: 35vw;
     justify-items: center;
     align-items: center;
-    grid-template-rows: 12vh 12vh 12vh 10vh;
+    grid-template-rows: 12vh 12vh 10vh;
 }
  
 .form-grp {

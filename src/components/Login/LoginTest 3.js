@@ -8,8 +8,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import {gapi} from 'gapi-script';
 // import axios from "axios";
-import './Style.css';
-import { handleLogin } from "../../Components/AxiosConfiguration/BackendData/data";
+import './StyleLogin.css';
+import { handleLogin } from "../AxiosConfiguration/BackendData/data 1";
 // import LoginButton from "../../Components/login";
 // import Main from "../../SSO/Main";
  
@@ -110,7 +110,7 @@ const LoginTest = ({setUserRole}) => {
                          
                
             ) : (
-                <div>
+                <div className="background">
  
                     <div className="error-container">
                         <p id="enote" className={ email && !validEmail ? "instructions" : "offscreen"}>
@@ -127,7 +127,7 @@ const LoginTest = ({setUserRole}) => {
                             Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
                         </p>
                     </div>
-                <section>
+                <section className="login">
                     <div className="error">
                         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     </div>
@@ -136,7 +136,7 @@ const LoginTest = ({setUserRole}) => {
                     </div>
                     <div className="form">
  
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className="loginForm">
                            
                            
                             <div className="form-grp">
@@ -225,15 +225,15 @@ const LoginTest = ({setUserRole}) => {
                         </form>
                         <ToastContainer/>
                         <hr />
-                        <div className="sso">
+                        {/* <div className="sso">
                            
-                        </div>
+                        </div> */}
                         <div className="signIn">
                             New User?
                             <span className="line">
                                 {/* router link  */}
                                
-                                <Link to='/register'>Sign Up</Link>
+                                <Link to='/register'  style={{color: "#F63B00"}}>Sign Up</Link>
                             </span>
                         </div>
                     </div>

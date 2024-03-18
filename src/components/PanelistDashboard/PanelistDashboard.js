@@ -103,7 +103,7 @@ const MyComponent = () => {
               <div>Idea Description: {selectedCard?.description}</div>
               {selectedCard?.link && (
                 <div style={{ marginTop: '20px' }}>
-                  <button className="btn btn-primary" onClick={() => window.open(selectedCard.link, '_blank')}>
+                  <button className="btn" onClick={() => window.open(selectedCard.link, '_blank')}>
                     View PDF
                   </button>
                 </div>
